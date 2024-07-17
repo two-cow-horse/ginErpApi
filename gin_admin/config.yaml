@@ -1,0 +1,31 @@
+# mysql configuration
+mysql:
+  path: "127.0.0.1"
+  port: "3306"
+  config: ""
+  db-name: "work"
+  username: "root"
+  password: "root"
+  max-idle-conns: 10
+  max-open-conns: 100
+  log-mode: "info"
+  log-zap: false
+
+# jwt configuration
+jwt:
+  secret: "erp_dev_&&&**%%$$$"
+  expire: 3600
+
+# redis configuration
+redis:
+  #是否使用redis集群模式
+  useCluster: false
+  #使用集群模式addr和db默认无效
+  addr: 127.0.0.1:6379
+  password: ""
+  db: 0
+  # redis集群模式配置列
+  clusterAddrs:
+    - "148.92.6.3:7000"
+    - "148.92.6.103:7001"
+    - "148.92.6.22:7002"
