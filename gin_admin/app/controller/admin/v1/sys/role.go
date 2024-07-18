@@ -60,7 +60,13 @@ func (s *Role) CreateOrUpdate(c *gin.Context, up bool) error {
 	var byteLen []byte = []byte(createRole.Name)
 	log.Println("get role ----->", len(byteLen), "----", len(createRole.Name))
 	if up {
-		var json map[string]interface{}
+		var json map[string]interface{} = make(map[string]interface{})
+		 log.Println("role Name ----->", createRole.Name)
+		if createRole.Name != ""{
+			json["Name"] = createRole.Name
+		}
+		json["Status"] = createRole.Status 
+		log.Println("role json ----->", json)
 		// role :=
 		err := createRole.Role.Update(createRole.AuthIDs,json)
 		if err != nil {
