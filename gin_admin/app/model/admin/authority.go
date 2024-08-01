@@ -1,8 +1,8 @@
 package admin_model
 
 import (
-	"log"
 	"erp_api/gin_admin/app/global"
+	"log"
 )
 
 // admin 权限表
@@ -13,6 +13,9 @@ type Authority struct {
 	Url       string `json:"url" gorm:"type:varchar(200);default:'';comment:'按钮/路由权限地址'"`
 	PID       uint   `json:"p_id" gorm:"type:int(10);default:0;comment:'父ID'"`
 	Icon      string `json:"icon" gorm:"type:varchar(200);default:'';comment:'icon图标'"`
+	Redirect  string `json:"redirect" gorm:"type:varchar(200);default:'';comment:'重定向地址'"`
+	Sort      uint   `json:"sort" gorm:"type:int(10);default:0;comment:'排序'"`
+	Meta      string `json:"meta" gorm:"type:type:varchar(512);default:'{}';comment:'路由信息'"`
 	ShowState int8   `json:"show_state" gorm:"type:int(1);default:1;comment:'是否显示/1-显示/0-不显示'"`
 	Updated   int64  `gorm:"autoUpdateTime:milli" json:"update_at"` // 使用时间戳毫秒数填充更新时间
 	Created   int64  `gorm:"autoCreateTime" json:"create_at"`       // 使用时间戳秒数填充创建时间
