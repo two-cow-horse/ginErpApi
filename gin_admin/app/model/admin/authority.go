@@ -12,7 +12,6 @@ type Authority struct {
 	Name      string `json:"name" gorm:"type:varchar(200);default:'';comment:'按钮/路由权限名称'"`
 	Url       string `json:"url" gorm:"type:varchar(200);default:'';comment:'按钮/路由权限地址'"`
 	PID       uint   `json:"p_id" gorm:"type:int(10);default:0;comment:'父ID'"`
-	Icon      string `json:"icon" gorm:"type:varchar(200);default:'';comment:'icon图标'"`
 	Redirect  string `json:"redirect" gorm:"type:varchar(200);default:'';comment:'重定向地址'"`
 	Sort      uint   `json:"sort" gorm:"type:int(10);default:0;comment:'排序'"`
 	Meta      string `json:"meta" gorm:"type:varchar(512);default:'{}';comment:'路由信息'"`
@@ -32,27 +31,27 @@ var defaultAuthority = []Authority{
 		ID:        1,
 		Auth_type: 1,
 		Name:      "首页",
-		Icon:      "icon",
 		ShowState: 1,
 		Url:       "/",
 		PID:       0,
+		Meta:      "{}",
 	},
 	{
 		ID:        2,
 		Auth_type: 2,
 		Name:      "测试按钮",
-		Icon:      "icon",
 		ShowState: 1,
 		Url:       "auth",
+		Meta:      "{}",
 	},
 	{
 		ID:        11,
 		Auth_type: 1,
 		Name:      "数据看板",
-		Icon:      "icon",
 		ShowState: 1,
 		Url:       "/showboard",
 		PID:       1,
+		Meta:      "{}",
 	},
 }
 

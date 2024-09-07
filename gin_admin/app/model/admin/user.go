@@ -13,7 +13,7 @@ type User struct {
 	Password string `json:"password" form:"password"  gorm:"type:varchar(300);default:'';comment:'密码'"`
 	RoleID   uint   `json:"role_id" form:"role_id" gorm:"type:int(10);default:0;comment:'权限ID'"`
 	Status   int8   `json:"status" form:"status" gorm:"type:int(1);default:0;comment:'禁用状态/1-禁用/0-启用'"`
-	Role     Role   `json:"role" form:"role" gorm:"foreignkey:RoleID;references:ID"` // 使用 RoleID 作为引用
+	Role     Role   `json:"role" form:"role" gorm:"foreignkey:RoleID;references:ID"` // 使用 RoleID 作为外键
 }
 
 // 表名称
